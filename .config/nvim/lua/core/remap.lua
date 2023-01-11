@@ -1,3 +1,5 @@
+-- More complicated keybindings are defined in after/plugin/whichkey.lua
+-- spacebar leader key masterrace
 vim.g.mapleader = " "
 
 -- Better window nav in normal and insert
@@ -10,11 +12,12 @@ vim.keymap.set("i", "<C-k>", "<C-w>k")
 vim.keymap.set("i", "<C-h>", "<C-w>h")
 vim.keymap.set("i", "<C-l>", "<C-w>l")
 
+
 -- Matching symbol
 vim.keymap.set("i", "(", "()<esc>i")
 vim.keymap.set("i", "[", "[]<esc>i")
 vim.keymap.set("i", "{", "{}<esc>i")
-vim.keymap.set("i", "<", "<><esc>i")
+-- vim.keymap.set("i", "<", "<><esc>i")
 vim.keymap.set("i", "\"", "\"\"<esc>i")
 vim.keymap.set("i", "\'", "\'\'<esc>i")
 

@@ -87,6 +87,8 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+alias cls='clear'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -104,6 +106,9 @@ alias config='/usr/bin/git --git-dir=$HOME/my_dotfiles --work-tree=$HOME'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Application shortcuts
+alias aseprite='/home/ben/.steam/debian-installation/steamapps/common/Aseprite/aseprite'
 
 
 # enable programmable completion features (you don't need to enable
@@ -140,7 +145,6 @@ if [ -f /home/ben/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $
 fi
 
 #afaik the changes below are what i came up with and may be error prone debug accordingly
-alias cls='clear'
 . "$HOME/.cargo/env"
 VERSION=v16.18.0
 DISTRO=linux-x64

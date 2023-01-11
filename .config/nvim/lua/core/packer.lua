@@ -1,5 +1,4 @@
 -- Put all the plugins you want into this file
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -9,14 +8,13 @@ return require('packer').startup(function(use)
 
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }	-- fuzzy file finding
 
   use { "ellisonleao/gruvbox.nvim" }	-- colorscheme
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} )	-- gud syntax highlighting
-  use('tpope/vim-fugitive')
+  use('tpope/vim-fugitive')  -- git integration
 
   -- LSP Stuff
   use {
@@ -41,9 +39,40 @@ return require('packer').startup(function(use)
 	  }
   }
 
-  use {
+  use { -- auto completes pairs in a smarter way than rebinding
       "windwp/nvim-autopairs",
       config = function() require("nvim-autopairs").setup {} end
+  }
+
+  use { -- startup dashboard
+      'goolord/alpha-nvim',
+      config = function ()
+          require'alpha'.setup(require'alpha.themes.dashboard'.config)
+      end
+  }
+
+  use("easymotion/vim-easymotion") -- fast jumping around the page
+
+  use {
+      "folke/which-key.nvim",
+      config = function()
+          require("which-key").setup()
+      end,
+  }
+
+  use{ -- good commenting
+      "terrortylor/nvim-comment",
+      config = function()
+          require("nvim_comment").setup()
+      end
+  }
+
+  use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      },
+      config = function() require("nvim-tree").setup() end
   }
 
 end)
