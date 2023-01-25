@@ -96,6 +96,8 @@ alias l='ls -CF'
 
 # helpful rust alias
 alias cr='cargo run'
+alias crr='cargo run --release'
+alias cf='cargo fmt'
 
 # dotfiles git repo
 # Usage config add <folder name>

@@ -11,7 +11,8 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }	-- fuzzy file finding
 
-  use { "ellisonleao/gruvbox.nvim" }	-- colorscheme
+  -- Color schemes
+  use { "ellisonleao/gruvbox.nvim" }
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} )	-- gud syntax highlighting
   use('tpope/vim-fugitive')  -- git integration
@@ -73,6 +74,18 @@ return require('packer').startup(function(use)
           'nvim-tree/nvim-web-devicons', -- optional, for file icons
       },
       config = function() require("nvim-tree").setup() end
+  }
+
+  use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+          require("todo-comments").setup {
+              -- your configuration comes here
+              -- or leave it empty to use the default settings
+              -- refer to the configuration section below
+          }
+      end
   }
 
 end)
