@@ -4,56 +4,62 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim' -- Packer can manage itself
+    use 'wbthomason/packer.nvim' -- Packer can manage itself
 
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }	-- fuzzy file finding
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }	-- fuzzy file finding
 
-  -- Color schemes
-  use { "ellisonleao/gruvbox.nvim" }
+    -- Color schemes
+    use { "ellisonleao/gruvbox.nvim" }
+    use { "sainnhe/gruvbox-material" } -- slightly better gruvbox
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} )	-- gud syntax highlighting
-  use('tpope/vim-fugitive')  -- git integration
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} )	-- gud syntax highlighting
+    use('tpope/vim-fugitive')  -- git integration
 
-  -- LSP Stuff
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+    -- LSP Stuff
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
-  }
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    }
 
-  use { -- auto completes pairs in a smarter way than rebinding
-      "windwp/nvim-autopairs",
-      config = function() require("nvim-autopairs").setup {} end
-  }
+    use { -- auto completes pairs in a smarter way than rebinding
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
 
   use { -- startup dashboard
-      'goolord/alpha-nvim',
-      config = function ()
-          require'alpha'.setup(require'alpha.themes.dashboard'.config)
-      end
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
   }
 
-  use("easymotion/vim-easymotion") -- fast jumping around the page
-
+  use {
+      'phaazon/hop.nvim',
+      branch = 'v2',
+      config = function()
+          require'hop'.setup { }
+      end
+  }
   use {
       "folke/which-key.nvim",
       config = function()

@@ -4,7 +4,7 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
     'rust_analyzer',
-    'sumneko_lua',
+    "lua_ls",
 })
 
 -- Fix Undefined global 'vim'
@@ -60,7 +60,7 @@ lsp.on_attach(function(client, bufnr)
   -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
   -- vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
   -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  -- vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
+  -- vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
   local wk = require('which-key')
   wk.register({
       g = {

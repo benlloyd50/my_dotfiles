@@ -105,12 +105,21 @@ alias cf='cargo fmt'
 # 	config push
 alias config='/usr/bin/git --git-dir=$HOME/my_dotfiles --work-tree=$HOME'
 
+gitacp() {
+    git add . && git commit -m "$1" && git push;
+}
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Application shortcuts
 alias aseprite='/home/ben/.steam/debian-installation/steamapps/common/Aseprite/aseprite'
+alias rexpaint='cd /home/ben/Downloads/Setups/ && wine REXPaint-v1.60/REXPaint.exe'
+
+# quick open for projects
+alias cdgame='cd ~/Dcuments/code/rust/terra_incognita/'
+alias nvimgame='cdgame && nvim .'
 
 
 # enable programmable completion features (you don't need to enable
@@ -146,8 +155,24 @@ if [ -f /home/ben/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $
 	source /home/ben/.config/synth-shell/synth-shell-prompt.sh
 fi
 
-#afaik the changes below are what i came up with and may be error prone debug accordingly
 . "$HOME/.cargo/env"
 VERSION=v16.18.0
 DISTRO=linux-x64
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+
+# pomodoro timer
+declare -A pomo_options
+pomo_options["work"]="45"
+pomo_options["break"]="10"
+
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val | lolcat
+  timer ${pomo_options["$val"]}m
+  # spd-say "'$val' session done"
+  fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
