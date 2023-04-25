@@ -157,8 +157,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #gaps test
 hide_edge_borders both
-for_window [class="^.*"] border pixel 3
-gaps inner 10
+default_border pixel 0 
+gaps inner 2 
 gaps outer 0
 
 set $black   #282828
@@ -173,7 +173,7 @@ set $white   #a89984
 set $white2  #ebdbb2
 
 # class                     border      back        text        indicator
-client.focused              $black 	$yellow     $white      $magenta
+client.focused              $black 	    $yellow     $white      $magenta
 client.focused_inactive     $black      $black      $white      $black
 client.unfocused            $black      $black      $magenta    $black
 client.urgent               $red        $red        $black      $red
