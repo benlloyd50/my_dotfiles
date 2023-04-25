@@ -1,0 +1,17 @@
+env:
+  TERM: xterm-256color
+
+font:
+  normal:
+    family: Cozette
+    style: Regular
+  bold:
+    family: Cozette
+    style: Regular
+  size: 7
+
+cursor:
+  style: Beam
+
+window:
+  opacity: 0.2
