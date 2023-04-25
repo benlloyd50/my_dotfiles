@@ -157,7 +157,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #gaps test
 hide_edge_borders both
-default_border pixel 0 
+for_window [class="^.*"] border pixel 2
 gaps inner 2 
 gaps outer 0
 
