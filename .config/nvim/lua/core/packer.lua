@@ -14,6 +14,9 @@ return require('packer').startup(function(use)
     -- Color schemes
     use { "ellisonleao/gruvbox.nvim" }
     use { "sainnhe/gruvbox-material" } -- slightly better gruvbox
+    require('packer').startup(function(use)
+      use({ 'rose-pine/neovim', as = 'rose-pine' })
+    end)
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} )	-- gud syntax highlighting
     use('tpope/vim-fugitive')  -- git integration
@@ -41,33 +44,34 @@ return require('packer').startup(function(use)
         }
     }
 
+    use { 'tribela/vim-transparent' }
     use { -- auto completes pairs in a smarter way than rebinding
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
 }
 
-  use { -- startup dashboard
-    'goolord/alpha-nvim',
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
-  }
+use { -- startup dashboard
+'goolord/alpha-nvim',
+config = function ()
+    require'alpha'.setup(require'alpha.themes.dashboard'.config)
+end
+      }
 
-  use {
-      'phaazon/hop.nvim',
-      branch = 'v2',
-      config = function()
-          require'hop'.setup { }
-      end
-  }
-  use {
-      "folke/which-key.nvim",
-      config = function()
-          require("which-key").setup()
-      end,
-  }
+      use {
+          'phaazon/hop.nvim',
+          branch = 'v2',
+          config = function()
+              require'hop'.setup { }
+          end
+      }
+      use {
+          "folke/which-key.nvim",
+          config = function()
+              require("which-key").setup()
+          end,
+      }
 
-  use{ -- good commenting
+      use{ -- good commenting
       "terrortylor/nvim-comment",
       config = function()
           require("nvim_comment").setup()
@@ -93,5 +97,6 @@ return require('packer').startup(function(use)
           }
       end
   }
+  use {'junegunn/goyo.vim'}
 
 end)

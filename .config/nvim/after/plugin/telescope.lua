@@ -1,4 +1,4 @@
-local builtin = require('telescope.builtin')
+-- local builtin = require('telescope.builtin')
 --vim.keymap.set('n', '<leader>f', builtin.find_files, {})
 
 local actions = require('telescope.actions')
@@ -6,8 +6,8 @@ require('telescope').setup{
     defaults = {
         mappings = {
             n = {
-                ['C-j'] = actions.move_selection_next,
-                ['C-k'] = actions.move_selection_previous,
+                ['M-j'] = actions.move_selection_next,
+                ['M-k'] = actions.move_selection_previous,
             }
         },
         path_display = { "smart"},

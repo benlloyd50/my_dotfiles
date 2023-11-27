@@ -16,7 +16,10 @@ set $mod Mod4
 font pango:Cozette 12
 
 # auto grab wallpaper from pictures
-exec feh --bg-scale --zoom fill ~/Pictures/desktopanimegirl.png
+exec feh --bg-scale --zoom fill ~/Pictures/anime_girl/otherworld.png
+
+# update monitor settings
+exec xrandr --output DP-0 --mode 3840x1080 -r 120
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -63,6 +66,8 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+# center toggle
+bindsym $mod+y floating toggle; resize set 75ppt 95ppt; move position center
 
 # split in horizontal orientation
 # rebound to z because vim keys are king
@@ -154,6 +159,8 @@ bindsym $mod+r mode "resize"
 
 #Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id picom -CGb
+
 
 #gaps test
 hide_edge_borders both

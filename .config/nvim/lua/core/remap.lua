@@ -12,6 +12,9 @@ vim.keymap.set("i", "<C-k>", "<C-w>k")
 vim.keymap.set("i", "<C-h>", "<C-w>h")
 vim.keymap.set("i", "<C-l>", "<C-w>l")
 
+-- zz after moving up and down
+vim.keymap.set("n", "<C-d>", "<c-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Matching symbol
 vim.keymap.set("i", "(", "()<esc>i")

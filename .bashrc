@@ -114,12 +114,14 @@ gitacp() {
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Application shortcuts
+alias ldtk='~/Downloads/Setups/ldtk1.4.1.AppImage'
 alias aseprite='/home/ben/.steam/debian-installation/steamapps/common/Aseprite/aseprite'
 alias rexpaint='cd /home/ben/Downloads/Setups/ && wine REXPaint-v1.60/REXPaint.exe'
 
 # quick open for projects
-alias cdgame='cd ~/Dcuments/code/rust/terra_incognita/'
+alias cdgame='cd ~/Dcuments/code/rust/rust_rpg_master/'
 alias nvimgame='cdgame && nvim .'
+alias cdweb='cd ~/Dcuments/code/web_projs/'
 
 
 # enable programmable completion features (you don't need to enable
@@ -176,3 +178,9 @@ pomodoro () {
 
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
+
+export PATH="/home/ben/Downloads/Setups/RustRover-233.10527.39/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
