@@ -1,3 +1,3 @@
-require("core.remap")
-require("core.packer")
 require("core.general")
+require("core.lazy")
+require("core.remap")

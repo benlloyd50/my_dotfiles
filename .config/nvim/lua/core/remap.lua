@@ -1,7 +1,3 @@
--- More complicated keybindings are defined in after/plugin/whichkey.lua
--- spacebar leader key masterrace
-vim.g.mapleader = " "
-
 -- Better window nav in normal and insert
 vim.keymap.set("n", "<C-j>", "<c-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
@@ -20,8 +16,16 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("i", "(", "()<esc>i")
 vim.keymap.set("i", "[", "[]<esc>i")
 vim.keymap.set("i", "{", "{}<esc>i")
--- vim.keymap.set("i", "<", "<><esc>i")
 vim.keymap.set("i", "\"", "\"\"<esc>i")
 vim.keymap.set("i", "\'", "\'\'<esc>i")
 
+-- Buffer movement
+vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>")
+vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>")
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
+vim.keymap.set("n", "<leader>bl", "<cmd>ls<cr>")
 
+vim.keymap.set("n", "<leader><F5>", "<cmd>source ~/.config/nvim/init.lua<cr>")
+
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+vim.keymap.set("n", "<leader>f", "<cmd>HopChar1<cr>")

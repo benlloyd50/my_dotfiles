@@ -1,12 +1,8 @@
 -- general settings for nvim (no plugin settings)
 
-vim.opt.nu = true
--- vim.opt.relativenumber = true
+vim.opt.nu = true 
+vim.opt.expandtab = true -- tab -> spaces
 
--- vim.opt.tabstop = 4
--- vim.opt.softtabstop = 4
--- vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
@@ -17,7 +13,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = false 
 vim.opt.incsearch = true
 vim.opt.smartcase = true
 
@@ -35,7 +31,7 @@ vim.opt.listchars = { space = '_', tab = '>~' }
 
 -- ======> Special function and command so I get 2 space tabs in web dev files
 function set_tab_width()
-    local filetypes_with_2_spaces = { "html", "ts", "tsx", "js", "css" }
+    local filetypes_with_2_spaces = { "html", "ts", "tsx", "js", "css", "lua" }
     local current_filetype = vim.bo.filetype
 
     if vim.fn.index(filetypes_with_2_spaces, current_filetype) ~= -1 then
