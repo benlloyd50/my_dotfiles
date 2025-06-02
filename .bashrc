@@ -94,10 +94,16 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# ollama
+alias o67='ollama run deepseek-coder:6.7b'
+
+
 # helpful rust alias
 alias cr='cargo run'
 alias crr='cargo run --release'
 alias cf='cargo fmt'
+alias cnf='cargo +nightly fmt'
+alias ct='cargo test'
 
 # dotfiles git repo
 # Usage config add <folder name>
@@ -114,14 +120,25 @@ gitacp() {
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Application shortcuts
-alias ldtk='~/Downloads/Setups/ldtk1.4.1.AppImage'
+alias ldtk='~/Downloads/appimage/ldtk153.appimage'
+alias bruno='~/Downloads/appimage/bruno_1.24.0.AppImage'
 alias aseprite='/home/ben/.steam/debian-installation/steamapps/common/Aseprite/aseprite'
 alias rexpaint='cd /home/ben/Downloads/Setups/ && wine REXPaint-v1.60/REXPaint.exe'
+alias osrs='flatpak run com.jagex.Launcher'
+alias obby='~/Downloads/appimage/Obsidian-1.8.9.AppImage'
+
+alias zen='~/Downloads/appimage/zen.AppImage'
+alias cursor='/home/ben/Downloads/appimage/cursor.AppImage'
+alias osrs='flatpak run --user com.adamcake.Bolt'
 
 # quick open for projects
-alias cdgame='cd ~/Dcuments/code/rust/rust_rpg_master/'
+alias cdgame='cd ~/Dcuments/code/rust/c2c_game'
 alias nvimgame='cdgame && nvim .'
 alias cdweb='cd ~/Dcuments/code/web_projs/'
+alias cdrs='cd ~/Dcuments/code/rust'
+
+alias replay='find src | entr -r cargo run'
+alias retest='find src | entr -r cargo test -- --nocapture'
 
 
 # enable programmable completion features (you don't need to enable
@@ -150,6 +167,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# bob neovim version manager GOAT
+export PATH="/home/ben/.local/share/bob/nvim-bin:$PATH"
+
+
 
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
@@ -162,25 +183,10 @@ VERSION=v16.18.0
 DISTRO=linux-x64
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
 
-# pomodoro timer
-declare -A pomo_options
-pomo_options["work"]="45"
-pomo_options["break"]="10"
-
-pomodoro () {
-  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
-  val=$1
-  echo $val | lolcat
-  timer ${pomo_options["$val"]}m
-  # spd-say "'$val' session done"
-  fi
-}
-
-alias wo="pomodoro 'work'"
-alias br="pomodoro 'break'"
-
-export PATH="/home/ben/Downloads/Setups/RustRover-233.10527.39/bin:$PATH"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# turn off screensaver stuff doesn't work move to xset config
+xset s off
+xset -dpms

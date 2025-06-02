@@ -10,8 +10,13 @@ font:
     style: Regular
   size: 7
 
+# font:
+#   normal:
+#     family: Fira Code
+#   size: 13
+
 cursor:
   style: Beam
 
-window:
-  opacity: 0.2
+
+background_opacity: 1

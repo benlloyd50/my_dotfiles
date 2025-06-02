@@ -55,6 +55,9 @@ bindsym $mod+d exec dmenu_run -c
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+bindsym $mod+grave exec thunar
+bindsym $mod+z exec zen &
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -67,11 +70,14 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 # center toggle
-bindsym $mod+y floating toggle; resize set 55ppt 95ppt; move position center
+bindsym $mod+y floating toggle; resize set 40ppt 95ppt; move position center
+
+# 1920 x 1080 resize
+bindsym $mod+n resize set 1920px 1080px 
 
 # split in horizontal orientation
 # rebound to z because vim keys are king
-bindsym $mod+z split h
+# bindsym $mod+z split h
 
 # split in vertical orientation
 bindsym $mod+v split v

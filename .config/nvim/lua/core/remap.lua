@@ -28,4 +28,8 @@ vim.keymap.set("n", "<leader>bl", "<cmd>ls<cr>")
 vim.keymap.set("n", "<leader><F5>", "<cmd>source ~/.config/nvim/init.lua<cr>")
 
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-vim.keymap.set("n", "<leader>f", "<cmd>HopChar1<cr>")
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
+
+vim.keymap.set("n", "<leader>c", "<cmd>HopChar1<cr>")
+
+vim.keymap.set("n", "<leader>g", "<cmd>Git<cr>")
